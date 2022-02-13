@@ -17,7 +17,7 @@ $(function () {
         }
         else if (x % 2 == 1) {
             turn = "O";
-            alert("O starts!") yooo
+            alert("O starts!")
         }
         else {
             turn = "X";
