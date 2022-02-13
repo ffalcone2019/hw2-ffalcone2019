@@ -1,5 +1,5 @@
 // Score the passed in game
-function score(gm, depth) {
+score = (gm, depth) => {
     // See if anyone won a row
     for (var r = 0; r < 3; r++) {
         if ((gm[r][0] == gm[r][1]) && (gm[r][1] == gm[r][2]) && (gm[r][1] === computer)) {
@@ -75,8 +75,8 @@ function score(gm, depth) {
 }
 
 // Minimax algorithm
-function minimax(gm, depth, whosTurn) {
-    //console.log("mm: start: gm: " + gm + ", depth: " + depth + ", turn: " + whosTurn);
+minimax = (gm, depth, whosTurn) => {
+        //console.log("mm: start: gm: " + gm + ", depth: " + depth + ", turn: " + whosTurn);
 
     // Score the game to see if somebody won
     var sc = score(gm, depth);
@@ -178,7 +178,7 @@ function minimax(gm, depth, whosTurn) {
 }
 
 // See if the passed in game has any more possible moves
-function noMoreMoves(gm) {
+noMoreMoves = (gm) => {
     // If any EMPTY then more moves to make
     for (var r = 0; r < 3; r++) {
         for (var c = 0; c < 3; c++) {
@@ -192,7 +192,7 @@ function noMoreMoves(gm) {
 }
 
 // Pick who randomly starts the game
-function pickStart() {
+pickStart = () => {
     // Pick a random number between 0 and 10
     let x = Math.random() * 10;
 
@@ -211,7 +211,7 @@ function pickStart() {
 }
 
 // Reset the board DOM objects and class
-function resetDomBoard() {
+resetDomBoard = () => {
     for (var r = 0; r < 3; r++) {
         for (var c = 0; c < 3; c++) {
             domBoard[r][c].html(EMPTY);
@@ -221,7 +221,7 @@ function resetDomBoard() {
 }
 
 // Copy the 2 dimensional game array into a new one
-function copyGameArray(gm) {
+copyGameArray = (gm) => {
     var newArray = [[], [], []];
     for (var r = 0; r < 3; r++) {
         for (var c = 0; c < 3; c++) {
@@ -243,7 +243,7 @@ setHighlight = (a) => {
 }
 
 // Set the win count
-function setWinCount(id, msg) {
+setWinCount = (id, msg) => {
 	if (id == "cats") {
 		$("#cats").html("Cat's games: " + msg);
 	}
@@ -252,7 +252,7 @@ function setWinCount(id, msg) {
 	}
 }
 
-function makeArrayFromDomBoard() {
+makeArrayFromDomBoard = () => {
     var gm = [[], [], []];
     for (var r = 0; r < 3; r++) {
         for (var c = 0; c < 3; c++) {
@@ -263,7 +263,7 @@ function makeArrayFromDomBoard() {
     return gm;
 }
 
-function startNewGame() {
+startNewGame = () => {
     // Reset the board
     resetDomBoard();
 
